@@ -1,0 +1,82 @@
+import type { Product } from "../types/product";
+import ProductCard from "../components/ProductCard";
+
+export const products: Product[] = [
+  {
+    id: 1,
+    name: "오버사이즈 티셔츠",
+    price: 29000,
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop",
+    description: "면 100% 데일리 티셔츠. 부드러운 착용감과 여유있는 핏이 특징입니다.",
+  },
+  {
+    id: 2,
+    name: "데님 자켓",
+    price: 89000,
+    image: "https://images.unsplash.com/photo-1551537482-f2075a1d41f2?w=400&h=400&fit=crop",
+    description: "빈티지 워싱 데님 자켓. 어떤 스타일에도 잘 어울리는 클래식 아이템.",
+  },
+  {
+    id: 3,
+    name: "캔버스 스니커즈",
+    price: 59000,
+    image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400&h=400&fit=crop",
+    description: "가볍고 편안한 캔버스 스니커즈. 캐주얼 룩의 완성.",
+  },
+  {
+    id: 4,
+    name: "니트 스웨터",
+    price: 45000,
+    image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&h=400&fit=crop",
+    description: "부드러운 울 블렌드 니트. 따뜻하면서도 세련된 디자인.",
+  },
+  {
+    id: 5,
+    name: "와이드 팬츠",
+    price: 55000,
+    image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=400&fit=crop",
+    description: "편안한 와이드 핏 팬츠. 데일리부터 오피스 룩까지.",
+  },
+  {
+    id: 6,
+    name: "레더 백팩",
+    price: 120000,
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop",
+    description: "고급 인조 가죽 백팩. 넉넉한 수납공간과 세련된 디자인.",
+  },
+  {
+    id: 7,
+    name: "모자", 
+    price: 8000, 
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE1UBaq0T9MRLFZ0_zNWwM-eZ21r3hIKOVNw&s", 
+    description: "가볍고 통기성이 좋은 소재에 클래식한 블랙 밴드가 더해진 세련된 스타일", 
+  },
+  {
+    id: 8, 
+    name: "무지개 양말", 
+    price: 10000, 
+    image: "https://www.crazysocks.com/cdn/shop/products/rainbow-metallic-socks-small_1024x1024.jpg?v=1595977722", 
+    description:"반짝이는 메탈릭 실과 무지개 패턴이 포인트", 
+  },
+  {
+    id: 9, 
+    name: "손목시계", 
+    price: 100000, 
+    image: "https://shop.rmg.co.uk/cdn/shop/files/350-watch-tan-strap.jpg?v=1752148537&width=480", 
+    description: "따뜻한 브라운 가죽 스트랩과 미니멀한 다이얼이 어우러진, 어떤 스타일에도 잘 어울리는 클래식한 디자인", 
+  }
+];
+
+export default function Products() {
+  return (
+   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      {products.map((p) => (
+        <ProductCard
+          key={p.id}
+          product={p}
+          onSelect={() => {}} // 필요 없으면 빈 함수
+        />
+      ))}
+    </div>
+  );
+}
